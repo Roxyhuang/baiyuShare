@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>活动详情</title>
+  <link href="../assets/css/bundle.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="mainInfo">
+       <img :src="pic" class="pic"/>
+      <div class="baseInfo">
+        <div class="title">{{title}}</div>
+        <i class="hr"></i>
+        <div class="tips">{{tips}}</div>
+        <div class="time">{{time}}</div>
+      </div>
+      <div class="address">{{address}}</div>
+    </div>
+    <div class="detailInfo">
+      <div class="panel">
+        <button v-if="" class="joinBtn">申请加入</button>
+        <div v-else="">活动已结束</div>
+      </div>
+      <div class="desc">
+        <div class="content">{{desc}}</div>
+      </div>
+      <div class="itemList">
+        <div></div>
+      </div>
+      <div class="memberList">
+
+      </div>
+    </div>
+
+  </div>
+</body>
+<script src="../node_modules/vue/dist/vue.min.js"></script>
+<script src="../assets/js/common.js"></script>
+</html>

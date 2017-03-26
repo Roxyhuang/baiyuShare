@@ -1,0 +1,101 @@
+@import "node_modules/stylus-px2rem";
+@import 'node_modules/nib';
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td
+  margin 0;
+  padding 0;
+
+html
+  font-family PingFangSC-Regular;
+
+body
+  background #f4f4f4;
+
+table
+  border-collapse collapse;
+  border-spacing 0;
+
+fieldset, img
+  border 0 none;
+
+address, caption, cite, code, dfn, em, strong, th, var
+  font-style normal;
+  font-weight normal;
+
+strong
+  font-weight 800;
+
+ol, ul, li
+  list-style none outside none;
+
+caption, th
+  text-align left;
+
+h1, h2, h3, h4, h5, h6
+  font-size 100%;
+  font-weight normal;
+
+.container
+  .mainInfo
+    display flex;
+    flex-direction row;
+    position relative;
+    .pic
+     width 100%;
+     height 150px;
+  .baseInfo
+    top 28px;
+    position absolute;
+    width 100%;
+    flex-direction row;
+    justify-content center;
+    .title
+      color #fff;
+      font-weight 600;
+      font-size 14px;
+      width 100%;
+      text-align center;
+      margin-top 6px;
+    .hr
+      width 100px;
+      height 2px;
+      background-color #fff;
+      display block;
+      margin 6px auto 0;
+    .tips
+      color #fff;
+      font-weight 600;
+      font-size 14px;
+      width 100%;
+      text-align center;
+      margin-top 2px;
+    .time
+      color #fff;
+      font-weight 600;
+      font-size 14px;
+      width 100%;
+      text-align center;
+      margin-top 2px;
+  .address
+    color #fff;
+    font-weight 600;
+    font-size 12px;
+    position absolute;
+    width 100%;
+    bottom 4px;
+    left 6px;
+    display flex;
+    flex-direction row;
+    align-content center;
+  .detailInfo
+    //background: -webkit-gradient(linear,center top,center bottom,from(#fa5000), to(#fff));
+    .panel
+      display flex;
+      flex-direction row;
+      align-content center;
+      justify-content flex-end;
+      .joinBtn
+        font-size 12px;
+
+
+

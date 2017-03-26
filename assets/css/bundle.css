@@ -1,0 +1,190 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: PingFangSC-Regular;
+}
+body {
+  background: #f4f4f4;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0 none;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+strong {
+  font-weight: 800;
+}
+ol,
+ul,
+li {
+  list-style: none outside none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+.container .mainInfo {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+}
+.container .mainInfo .pic {
+  width: 100%;
+  height: 9.375rem;
+}
+.container .baseInfo {
+  top: 1.75rem;
+  position: absolute;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.container .baseInfo .title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.375rem;
+}
+.container .baseInfo .hr {
+  width: 6.25rem;
+  height: 0.125rem;
+  background-color: #fff;
+  display: block;
+  margin: 0.375rem auto 0;
+}
+.container .baseInfo .tips {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.125rem;
+}
+.container .baseInfo .time {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.125rem;
+}
+.container .address {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0.25rem;
+  left: 0.375rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  align-content: center;
+}
+.container .detailInfo .panel {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -o-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.container .detailInfo .panel .joinBtn {
+  font-size: 0.75rem;
+}

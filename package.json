@@ -1,0 +1,33 @@
+{
+  "name": "baiyu",
+  "version": "1.0.0",
+  "description": "This a share for baiyu app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roxyhuang/baiyuShare.git"
+  },
+  "keywords": [
+    "baiyu",
+    "share"
+  ],
+  "author": "Neo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Roxyhuang/baiyuShare/issues"
+  },
+  "homepage": "https://github.com/Roxyhuang/baiyuShare#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "stylus": "^0.54.5",
+    "vue": "^2.2.5"
+  },
+  "devDependencies": {
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5",
+    "stylus-px2rem": "^1.0.11"
+  }
+}

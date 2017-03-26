@@ -1,0 +1,12 @@
+# Node.js and NPM
+node_modules
+npm-debug.log
+
+# Firebase
+firebase-debug.log
+
+# Jetbrain
+.idea
+
+# MacOS
+.DS_Store
