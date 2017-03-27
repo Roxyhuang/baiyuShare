@@ -81,21 +81,62 @@ h1, h2, h3, h4, h5, h6
     font-weight 600;
     font-size 12px;
     position absolute;
-    width 100%;
+    //width 100%;
     bottom 4px;
     left 6px;
     display flex;
     flex-direction row;
     align-content center;
   .detailInfo
-    //background: -webkit-gradient(linear,center top,center bottom,from(#fa5000), to(#fff));
+    background: linear-gradient(red, #fff);
     .panel
       display flex;
       flex-direction row;
       align-content center;
       justify-content flex-end;
+      height 30px;
+      border-bottom 1px solid #c2c2c2;
       .joinBtn
         font-size 12px;
+        padding 6px 6px;
+        background-color #b2b2b2;
+        border-top-left-radius:10px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:0;
+        border-bottom-left-radius:10px;
+        display flex;
+        flex-direction row;
+        justify-content center;
+        align-content center;
+      .endBtn
+        font-size 12px;
+        line-height 36px;
+    .desc
+      padding 0 6px 16px;
+      border-bottom 1px solid #c2c2c2;
+      .descTitle
+        font-size 12px;
+      .content
+        font-size 12px;
+        color:#fa5000;
+    .itemList
+      margin-top 16px;
+      padding 0 6px 16px;
+      display flex;
+      .item
+        display flex;
+        flex-direction row;
+        width 40%;
+      .itemTitle
+        width 40%;
+      .haveItem
+        display flex;
+        width 50%
+        flex-direction row;
+      .needItem
+        display flex;
+        width 50%;
+        flex-direction row;
 
 
 

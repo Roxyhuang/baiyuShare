@@ -19,17 +19,35 @@
     </div>
     <div class="detailInfo">
       <div class="panel">
-        <button v-if="" class="joinBtn">申请加入</button>
-        <div v-else="">活动已结束</div>
+        <button v-if="activeStatus" class="joinBtn">申请加入</button>
+        <div v-else="activeStatus" class="endBtn">活动已结束</div>
       </div>
       <div class="desc">
+        <div class="descTitle">描述：</div>
         <div class="content">{{desc}}</div>
       </div>
       <div class="itemList">
-        <div></div>
+        <div class="haveItem">
+          <div class="itemTitle">已有</div>
+          <div class="item">
+            <div>KTV</div><div>X1</div>
+          </div>
+        </div>
+
+        <div class="needItem">
+          <div>还缺</div>
+          <div class="item"><div>KTV</div><div>X1</div></div>
+        </div>
       </div>
       <div class="memberList">
-
+        <div>成员列表：</div>
+        <div class="memberContainer">
+          <div class="memberItem">
+            <img src=""/>
+            <div>KTV X1 </div>
+            <div>男生 X1 </div>
+          </div>
+        </div>
       </div>
     </div>
 
