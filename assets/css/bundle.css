@@ -71,6 +71,16 @@ h6 {
   font-size: 100%;
   font-weight: normal;
 }
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(#f00, #fff);
+  background: -moz-linear-gradient(#f00, #fff);
+  background: -o-linear-gradient(#f00, #fff);
+  background: -ms-linear-gradient(#f00, #fff);
+  background: linear-gradient(#f00, #fff);
+}
 .container .mainInfo {
   display: -webkit-box;
   display: -moz-box;
@@ -161,12 +171,9 @@ h6 {
   -webkit-align-content: center;
   align-content: center;
 }
-.container .detailInfo {
-  background: -webkit-linear-gradient(#f00, #fff);
-  background: -moz-linear-gradient(#f00, #fff);
-  background: -o-linear-gradient(#f00, #fff);
-  background: -ms-linear-gradient(#f00, #fff);
-  background: linear-gradient(#f00, #fff);
+.container .address .addressIcon {
+  width: 1.0625rem;
+  height: 1.0625rem;
 }
 .container .detailInfo .panel {
   display: -webkit-box;
@@ -295,4 +302,23 @@ h6 {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+}
+.container .memberItem {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.container .userImg {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
 }
