@@ -75,11 +75,11 @@ h6 {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: -webkit-linear-gradient(#f00, #fff);
-  background: -moz-linear-gradient(#f00, #fff);
-  background: -o-linear-gradient(#f00, #fff);
-  background: -ms-linear-gradient(#f00, #fff);
-  background: linear-gradient(#f00, #fff);
+  background: -webkit-linear-gradient(rgba(254,167,51,0.4), #fff);
+  background: -moz-linear-gradient(rgba(254,167,51,0.4), #fff);
+  background: -o-linear-gradient(rgba(254,167,51,0.4), #fff);
+  background: -ms-linear-gradient(rgba(254,167,51,0.4), #fff);
+  background: linear-gradient(rgba(254,167,51,0.4), #fff);
 }
 .container .mainInfo {
   display: -webkit-box;
@@ -243,7 +243,8 @@ h6 {
 }
 .container .detailInfo .desc .content {
   font-size: 0.75rem;
-  color: #fa5000;
+  color: #fea733;
+  margin-top: 0.25rem;
 }
 .container .detailInfo .itemList {
   margin-top: 1rem;
@@ -272,6 +273,8 @@ h6 {
 }
 .container .detailInfo .itemList .itemTitle {
   width: 40%;
+  color: #fea733;
+  font-size: 0.75rem;
 }
 .container .detailInfo .itemList .haveItem {
   display: -webkit-box;
@@ -287,6 +290,7 @@ h6 {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  font-size: 0.75rem;
 }
 .container .detailInfo .itemList .needItem {
   display: -webkit-box;
@@ -302,6 +306,7 @@ h6 {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  font-size: 0.75rem;
 }
 .container .memberItem {
   display: -webkit-box;
