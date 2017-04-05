@@ -18,7 +18,6 @@ function openUrl(url) {
   location.href = url;
 }
 
-
 var app = new Vue({
   el: '#app',
   data: function () {
@@ -40,7 +39,28 @@ var app = new Vue({
   },
   methods: {
     getDetail: function () {
-      window.fetch()
+      window.fetch("http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=1", {
+        method: "GET",
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'text/plain'
+        },
+      }).then(function(res) {
+        if (res.ok) {
+            var data = res.data;
+            this.pic = data.activityPic;
+            this.title = data.activityTitle;
+            this.time = data.startTime;
+            this.address = data.detailAddress;
+            this.activeStatus = data.activityStatus;
+            this.desc = data.activityDesc;
+        } else if (res.status == 401) {
+          alert('抱歉，服务器正在调试中');
+        }
+      }, function(e) {
+          alert('抱歉，服务器正在调试中');
+      });
     },
   }
 });
