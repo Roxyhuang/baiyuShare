@@ -36,11 +36,11 @@ var app = new Vue({
     }
   },
   created: function () {
-
+    this.getDetail();
   },
   methods: {
     getDetail: function () {
-
+      window.fetch()
     },
   }
 });
