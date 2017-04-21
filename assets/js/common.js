@@ -47,6 +47,19 @@ var app = new Vue({
     goToDownload: function () {
       window.location.href = '';
     },
+    getWXsecrity: function() {
+      window.fetch("http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
+        method: "GET",
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'text/plain'
+        },
+      }).then(function (res) {
+
+      }
+    }
+    ,
     getDetail: function () {
       window.fetch("http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
         method: "GET",
@@ -64,59 +77,60 @@ var app = new Vue({
           this.address = data.detailAddress;
           this.activeStatus = data.activityStatus;
           this.desc = data.activityDesc;
-          wx.config({
-            debug: true,
-            appId: 'wxedfbdfaf82e1bd68',
-              timestamp: parseInt(json.timestamp),
-              nonceStr: json.nonce,
-              signature: json.signature,
-              jsApiList: [
-                'onMenuShareAppMessage',
-                'onMenuShareTimeline',
 
-              ]
-          });
-          wx.onMenuShareTimeline({
-            title: data.activityTitle, // 分享标题
-            link: 'http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
-            imgUrl: data.activityPic, // 分享图标
-            success: function () {
-              // 用户确认分享后执行的回调函数
-            },
-            cancel: function () {
-              // 用户取消分享后执行的回调函数
-            }
-          });
-           wx.onMenuShareAppMessage({
-             title: data.activityTitle, // 分享标题
-             desc: data.activityDesc, // 分享描述
-             link: '', // 分享链接
-             imgUrl: data.activityPic, // 分享图标
-             type: 'link', // 分享类型,music、video或link，不填默认为link
-             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-             success: function () {
-               // 用户确认分享后执行的回调函数
-             },
-             cancel: function () {
-               // 用户取消分享后执行的回调函数
-             }
-           });
-          wx.ready(function () {
-            wx.onMenuShareAppMessage({
-              success: function () {
-                // 用户确认分享后执行的回调函数
-              },
-              cancel: function () {
-                // 用户取消分享后执行的回调函数
-              }
-            });
-          });
+          // wx.config({
+          //   debug: true,
+          //   appId: 'wxedfbdfaf82e1bd68',
+          //     timestamp: parseInt(json.timestamp),
+          //     nonceStr: json.nonce,
+          //     signature: json.signature,
+          //     jsApiList: [
+          //       'onMenuShareAppMessage',
+          //       'onMenuShareTimeline',
+          //
+          //     ]
+          // });
+          // wx.onMenuShareTimeline({
+          //   title: data.activityTitle, // 分享标题
+          //   link: 'http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
+          //   imgUrl: data.activityPic, // 分享图标
+          //   success: function () {
+          //     // 用户确认分享后执行的回调函数
+          //   },
+          //   cancel: function () {
+          //     // 用户取消分享后执行的回调函数
+          //   }
+          // });
+          //  wx.onMenuShareAppMessage({
+          //    title: data.activityTitle, // 分享标题
+          //    desc: data.activityDesc, // 分享描述
+          //    link: '', // 分享链接
+          //    imgUrl: data.activityPic, // 分享图标
+          //    type: 'link', // 分享类型,music、video或link，不填默认为link
+          //    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+          //    success: function () {
+          //      // 用户确认分享后执行的回调函数
+          //    },
+          //    cancel: function () {
+          //      // 用户取消分享后执行的回调函数
+          //    }
+          //  });
+          // wx.ready(function () {
+          //   wx.onMenuShareAppMessage({
+          //     success: function () {
+          //       // 用户确认分享后执行的回调函数
+          //     },
+          //     cancel: function () {
+          //       // 用户取消分享后执行的回调函数
+          //     }
+          //   });
+          // });用户取消分享后执行的回调函数
 
         } else if (res.status == 401) {
-          alert('抱歉，服务器正在调试中');
+          // alert('抱歉，服务器正在调试中');
         }
       }, function (e) {
-          alert('抱歉，服务器正在调试中');
+          // alert('抱歉，服务器正在调试中');
       });
     },
   }
