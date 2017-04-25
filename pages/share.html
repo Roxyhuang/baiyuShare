@@ -23,8 +23,8 @@
   </div>
   <div class="detailInfo">
     <div class="panel">
-      <button v-if="activeStatus" class="joinBtn">申请加入</button>
-      <div v-else="activeStatus" class="endBtn">活动已结束</div>
+      <button v-if="activeStatus === 1 || activeStatus === 2" class="joinBtn">申请加入</button>
+      <div v-else="activeStatus === 3 || activeStatus === 4 " class="endBtn">活动已结束</div>
     </div>
     <div class="desc">
       <div class="descTitle">描述：</div>
@@ -33,51 +33,31 @@
     <div class="itemList">
       <div class="haveItem">
         <div class="itemTitle">已有:</div>
-        <div class="item">
-          <div>KTV</div>
-          <div class="numb">X1</div>
+        <div class="item" v-for="item in goodList">
+          <div>{{item.goodName}}</div>
+          <div class="numb">X{{item.goodNum}}</div>
         </div>
       </div>
 
       <div class="needItem">
         <div class="itemTitle">还缺:</div>
-        <div class="item">
-          <div>KTV</div>
-          <div class="numb">X1</div>
-        </div>
-        <div class="item">
-          <div>KTV</div>
-          <div class="numb">X1</div>
+        <div class="item" v-for="item in goodList">
+          <div>{{item.goodName}}</div>
+          <div class="numb">X{{item.goodNum}}</div>
         </div>
       </div>
     </div>
     <div class="memberList">
       <div class="itemTitle">成员列表：</div>
       <div class="memberContainer">
-        <div class="memberItem">
+        <div class="memberItem" v-for="item in agreeUser">
           <img class="userImg"
-               src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490639672322&di=9baf1ad0f155d73681c4a1807a3c28fa&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201509%2F30%2F20150930222210_cLaPQ.thumb.700_0.jpeg">
-          <div class="itemBox">
-            <div class="name">KTV</div>
-            <div class="numb">X1</div>
+               :src="item.userPhoto"/>
+          <div>{{item.userName}}</div>
+          <div class="itemBox" v-for=" good in item.goods">
+            <div class="name">{{good.goodName}}</div>
+            <div class="numb">X{{good.giveNum}}</div>
           </div>
-          <div class="itemBox">
-            <div class="name">男生</div>
-            <div class="numb">X1</div>
-          </div>
-        </div>
-        <div class="memberItem">
-          <img class="userImg"
-               src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490639672322&di=9baf1ad0f155d73681c4a1807a3c28fa&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201509%2F30%2F20150930222210_cLaPQ.thumb.700_0.jpeg">
-          <div class="itemBox">
-            <div class="name">KTV</div>
-            <div class="numb">X1</div>
-          </div>
-          <div class="itemBox">
-            <div class="name">男生</div>
-            <div class="numb">X1</div>
-          </div>
-
         </div>
       </div>
     </div>
