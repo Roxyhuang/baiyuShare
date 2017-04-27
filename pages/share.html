@@ -35,7 +35,7 @@
         <div class="itemTitle">已有:</div>
         <div class="item" v-for="item in goodList">
           <div>{{item.goodName}}</div>
-          <div class="numb">X{{item.goodNum}}</div>
+          <div class="numb" v-if="goodNum===goodConunt">X{{item.goodCount}}</div>
         </div>
       </div>
 
@@ -43,7 +43,7 @@
         <div class="itemTitle">还缺:</div>
         <div class="item" v-for="item in goodList">
           <div>{{item.goodName}}</div>
-          <div class="numb">X{{item.goodNum}}</div>
+          <div class="numb" v-if="item.goodNum===0">X{{item.goodCount}}</div>
         </div>
       </div>
     </div>
