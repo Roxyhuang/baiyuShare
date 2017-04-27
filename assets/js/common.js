@@ -50,7 +50,7 @@ var app = new Vue({
       window.location.href = '';
     },
     getWXsecrity: function() {
-      window.fetch("http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
+      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -76,7 +76,7 @@ var app = new Vue({
     }
     ,
     getMemberList: function() {
-      window.fetch("http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityUseractivityId=" + this.activityId, {
+      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityUseractivityId=" + this.activityId, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -91,7 +91,7 @@ var app = new Vue({
       });
     },
     getDetail: function () {
-      window.fetch("http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
+      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -111,7 +111,7 @@ var app = new Vue({
           this.noGoods = data.noGoods;
           wx.onMenuShareTimeline({
             title: data.activityTitle, // 分享标题
-            link: 'http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
+            link: 'http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
             imgUrl: data.activityPic, // 分享图标
             success: function () {
               // 用户确认分享后执行的回调函数
@@ -123,7 +123,7 @@ var app = new Vue({
            wx.onMenuShareAppMessage({
              title: data.activityTitle, // 分享标题
              desc: data.activityDesc, // 分享描述
-             link: 'http://61.132.72.202:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
+             link: 'http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
              imgUrl: data.activityPic, // 分享图标
              type: 'link', // 分享类型,music、video或link，不填默认为link
              dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
