@@ -52,63 +52,54 @@ var app = new Vue({
     getWXsecrity: function() {
       window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
         method: "GET",
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'text/plain'
-        },
       }).then(function (res) {
           if(res.ok) {
-            var data = res.data;
-            wx.config({
-              debug: true,
-              appId: 'wxedfbdfaf82e1bd68',
-                timestamp: data.timestamp,
+            res.json().then(function(json) {
+              var data = json.data;
+              wx.config({
+                debug: true,
+                appId: 'wxedfbdfaf82e1bd68',
+                timestamp: data.timeSpan,
                 nonceStr: data.noncestr,
                 signature: data.signature,
                 jsApiList: [
                   'onMenuShareAppMessage',
                   'onMenuShareTimeline',
                 ]
+              });
             });
           }
       });
     }
     ,
     getMemberList: function() {
-      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityUseractivityId=" + this.activityId, {
+      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityUse?activityId=" + this.activityId, {
         method: "GET",
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'text/plain'
-        },
       }).then(function (res) {
           if(res.ok) {
-            var data = res.data;
-            this.agreeUser = data.agreeUser;
+            res.json().then(function(json) {
+              var data = json.data;
+              this.agreeUser = data.agreeUser;
+            });
           }
       });
     },
     getDetail: function () {
       window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
         method: "GET",
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'text/plain'
-        },
       }).then(function (res) {
         if (res.ok) {
-          var data = res.data;
-          this.pic = data.activityPic;
-          this.title = data.activityTitle;
-          this.time = data.startTime;
-          this.address = data.detailAddress;
-          this.activeStatus = data.activityStatus;
-          this.desc = data.activityDesc;
-          this.goodList = data.goodList;
-          this.noGoods = data.noGoods;
+          res.json().then(function(json) {
+            var data = json.data;
+            this.pic = data.activityPic;
+            this.title = data.activityTitle;
+            this.time = data.startTime;
+            this.address = data.detailAddress;
+            this.activeStatus = data.activityStatus;
+            this.desc = data.activityDesc;
+            this.goodList = data.goodList;
+            this.noGoods = data.noGoods;
+          });
           wx.onMenuShareTimeline({
             title: data.activityTitle, // 分享标题
             link: 'http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
