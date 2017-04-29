@@ -55,7 +55,7 @@ var app = new Vue({
         method: 'GET',
       }).then(function (res) {
         if(res.status === 200) {
-            var data = res.data;
+            var data = res.data.data;
             wx.config({
               debug: true,
               appId: 'wxedfbdfaf82e1bd68',
@@ -78,7 +78,7 @@ var app = new Vue({
         method: "GET",
       }).then(function (res) {
         if(res.status === 200) {
-          var data = res.data;
+          var data = res.data.data;
           self.agreeUser = data.agreeUser;
           }
       });
@@ -86,18 +86,18 @@ var app = new Vue({
     getDetail: function () {
       var self = this;
       axios({
-        url: "http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId,
+        url: "http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetaißßl?activityId=" + this.activityId,
         method: "GET",
       }).then(function (res) {
         if(res.status === 200) {
-            var data = json.data;
+            var data = res.data.data;
           self.pic = data.activityPic;
           self.title = data.activityTitle;
           self.time = data.startTime;
           self.address = data.detailAddress;
           self.activeStatus = data.activityStatus;
           self.desc = data.activityDesc;
-          self.goodList = data.goodList;
+          self.goodList = data.goodsList;
           self.noGoods = data.noGoods;
           wx.onMenuShareTimeline({
             title: data.activityTitle, // 分享标题
