@@ -50,13 +50,11 @@ var app = new Vue({
       window.location.href = '';
     },
     getWXsecrity: function() {
-      var self = this;
       axios({
         url: "http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId,
         method: 'GET',
       }).then(function (res) {
-        console.log(res);
-        if(res.ok) {
+        if(res.status === 200) {
             var data = res.data;
             wx.config({
               debug: true,
@@ -74,33 +72,33 @@ var app = new Vue({
     }
     ,
     getMemberList: function() {
-      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityUse?activityId=" + this.activityId, {
+      var self = this;
+      axios({
+        url: "http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityUser?activityId=" + this.activityId,
         method: "GET",
       }).then(function (res) {
-          if(res.ok) {
-            res.json().then(function(json) {
-              var data = json.data;
-              this.agreeUser = data.agreeUser;
-            });
+        if(res.status === 200) {
+          var data = res.data;
+          self.agreeUser = data.agreeUser;
           }
       });
     },
     getDetail: function () {
-      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
+      var self = this;
+      axios({
+        url: "http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId,
         method: "GET",
       }).then(function (res) {
-        if (res.ok) {
-          res.json().then(function(json) {
+        if(res.status === 200) {
             var data = json.data;
-            this.pic = data.activityPic;
-            this.title = data.activityTitle;
-            this.time = data.startTime;
-            this.address = data.detailAddress;
-            this.activeStatus = data.activityStatus;
-            this.desc = data.activityDesc;
-            this.goodList = data.goodList;
-            this.noGoods = data.noGoods;
-          });
+          self.pic = data.activityPic;
+          self.title = data.activityTitle;
+          self.time = data.startTime;
+          self.address = data.detailAddress;
+          self.activeStatus = data.activityStatus;
+          self.desc = data.activityDesc;
+          self.goodList = data.goodList;
+          self.noGoods = data.noGoods;
           wx.onMenuShareTimeline({
             title: data.activityTitle, // 分享标题
             link: 'http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId='+ this.activityId, // 分享链接
@@ -129,8 +127,6 @@ var app = new Vue({
         } else if (res.status == 401) {
           alert('抱歉，服务器正在调试中');
         }
-      }, function (e) {
-          alert('抱歉，服务器正在调试中');
       });
     },
   }
