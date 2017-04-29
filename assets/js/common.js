@@ -50,25 +50,26 @@ var app = new Vue({
       window.location.href = '';
     },
     getWXsecrity: function() {
-      window.fetch("http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId, {
-        method: "GET",
+      var self = this;
+      axios({
+        url: "http://116.62.64.234:2017/BAIYU.Web.Api/api/Activitys/GetActivityDetail?activityId=" + this.activityId,
+        method: 'GET',
       }).then(function (res) {
-          if(res.ok) {
-            res.json().then(function(json) {
-              var data = json.data;
-              wx.config({
-                debug: true,
-                appId: 'wxedfbdfaf82e1bd68',
-                timestamp: data.timeSpan,
-                nonceStr: data.noncestr,
-                signature: data.signature,
-                jsApiList: [
-                  'onMenuShareAppMessage',
-                  'onMenuShareTimeline',
-                ]
-              });
+        console.log(res);
+        if(res.ok) {
+            var data = res.data;
+            wx.config({
+              debug: true,
+              appId: 'wxedfbdfaf82e1bd68',
+              timestamp: data.timeSpan,
+              nonceStr: data.noncestr,
+              signature: data.signature,
+              jsApiList: [
+                'onMenuShareAppMessage',
+                'onMenuShareTimeline',
+              ]
             });
-          }
+        }
       });
     }
     ,

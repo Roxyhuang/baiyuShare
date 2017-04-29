@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Roxyhuang/baiyuShare#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "gulp": "^3.9.1",
     "stylus": "^0.54.5",
     "vue": "^2.2.5"
